@@ -189,6 +189,17 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += device/huawei/u8120/prebuilt/kernel:kernel
 
+# Additions to build.prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.android.dataroaming=false \
+    dalvik.vm.execution-mode=int:jit \
+    dalvik.vm.heapsize=24m \
+    persist.sys.use_dithering=0 \
+    persist.sys.purgeable_assets=1 \
+    ring.delay=0 \
+    ro.telephony.call_ring.delay=0 \
+    ro.telephony.call_ring.multiple=false
+
 
 ## (2) Also get non-open-source aspects if available
 $(call inherit-product-if-exists, vendor/huawei/u8120/u8120-vendor.mk)

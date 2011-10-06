@@ -1,5 +1,4 @@
-/dev/oncrpc                      0777   radio        system
-/dev/oncrpc/*                    0777   radio        system
+/dev/oncrpc/*                    0660   radio        system
 /dev/smd*                        0777   radio        system
 /dev/accel                       0660   system       system
 /dev/akm8973_aot                 0660   system       system
