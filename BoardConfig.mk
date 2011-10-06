@@ -92,8 +92,6 @@ BOARD_EGL_CFG := device/huawei/u8120/prebuilt/lib/egl/egl.cfg
 TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
 TARGET_ELECTRONBEAM_FRAMES := 10
 
-# RIL
-TARGET_PROVIDES_LIBRIL := true
 BOARD_HAS_LIMITED_EGL := true
 
 # Wifi related defines

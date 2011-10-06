@@ -23,45 +23,6 @@ on post-fs
     mkdir /data/local/tmp 0777 radio shell
     chown radio shell /data/local
     chown radio shell /data/local/tmp
-    
-    # Permissions for ril
-    chmod 0777 /dev/oncrpc
-    chmod 0777 /dev/oncrpc/00000000:0
-    chmod 0777 /dev/oncrpc/30000002:00020000
-    chmod 0777 /dev/oncrpc/3000000a:00010000
-    chmod 0777 /dev/oncrpc/30000012:00010000
-    chmod 0777 /dev/oncrpc/30000013:00020000
-    chmod 0777 /dev/oncrpc/30000014:00010000
-    chmod 0777 /dev/oncrpc/30000017:00010000
-    chmod 0777 /dev/oncrpc/3000001a:00010000
-    chmod 0777 /dev/oncrpc/30000048:00010000
-    chmod 0777 /dev/oncrpc/3000005f:00010000
-    chmod 0777 /dev/oncrpc/30000060:00010000
-    chmod 0777 /dev/oncrpc/30000061:00010000
-    chmod 0777 /dev/oncrpc/30000064:00010000
-    chmod 0777 /dev/oncrpc/30000066:00010000
-    chmod 0777 /dev/oncrpc/3000006b:00010000
-    chmod 0777 /dev/oncrpc/30000081:00010000
-    chmod 0777 /dev/oncrpc/30000089:00010000
-    chmod 0777 /dev/oncrpc/3000008c:00040000
-    chmod 0777 /dev/oncrpc/30000091:00020000
-    chmod 0777 /dev/oncrpc/30000093:00000000
-    chmod 0777 /dev/oncrpc/30000096:00000000
-    chmod 0777 /dev/oncrpc/3000fffd:00000000
-
-    chmod 0777 /dev/oncrpc/30000000:ad750db4
-    chmod 0777 /dev/oncrpc/30000003:a7eed910
-    chmod 0777 /dev/oncrpc/3000000e:a4de1f0e
-    chmod 0777 /dev/oncrpc/30000016:9ac802c5
-    chmod 0777 /dev/oncrpc/30000019:821a1945
-    chmod 0777 /dev/oncrpc/3000001b:fae9727e
-    chmod 0777 /dev/oncrpc/3000001d:ba845703
-    chmod 0777 /dev/oncrpc/30000048:00010000
-    chmod 0777 /dev/oncrpc/3000003c:cc5478d4
-    chmod 0777 /dev/oncrpc/3000005b:a60286b0
-    chmod 0777 /dev/oncrpc/3000fe00:a82d4624
-
-    chown radio /dev/smd*
 
 
 on boot

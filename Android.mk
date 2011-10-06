@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-include $(call all-named-subdir-makefiles, recovery TSCalibration libril libaudio libcopybit)
+include $(call all-named-subdir-makefiles, recovery TSCalibration libaudio libcopybit)

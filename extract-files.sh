@@ -17,6 +17,7 @@ bin/oem_rpc_svc
 bin/akmd2
 bin/qmuxd
 bin/hci_qcomm_init
+bin/rild
 
 lib/libaudioeq.so
 lib/libOmxCore.so
@@ -59,3 +60,4 @@ chmod 755 ../../../vendor/huawei/u8120/proprietary/oem_rpc_svc
 chmod 755 ../../../vendor/huawei/u8120/proprietary/akmd2
 chmod 755 ../../../vendor/huawei/u8120/proprietary/qmuxd
 chmod 755 ../../../vendor/huawei/u8120/proprietary/hci_qcomm_init
+chmod 755 ../../../vendor/huawei/u8120/proprietary/rild
