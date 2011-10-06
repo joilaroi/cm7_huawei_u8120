@@ -117,27 +117,25 @@ PRODUCT_COPY_FILES += \
 
 # Proprietary RIL related and Bluetooth
 PRODUCT_COPY_FILES += \
-    vendor/huawei/u8120/proprietary/qmuxd:system/bin/qmuxd \
-    vendor/huawei/u8120/proprietary/rild:system/bin/rild \
+    vendor/huawei/u8120/proprietary/libauth.so:system/lib/libauth.so \
+    vendor/huawei/u8120/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
+    vendor/huawei/u8120/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
+    vendor/huawei/u8120/proprietary/libdsm.so:system/lib/libdsm.so \
+    vendor/huawei/u8120/proprietary/libqueue.so:system/lib/libqueue.so \
     vendor/huawei/u8120/proprietary/libcm.so:system/lib/libcm.so \
     vendor/huawei/u8120/proprietary/libdiag.so:system/lib/libdiag.so \
-    vendor/huawei/u8120/proprietary/libdll.so:system/lib/libdll.so \
-    vendor/huawei/u8120/proprietary/libdsm.so:system/lib/libdsm.so \
-    vendor/huawei/u8120/proprietary/libdss.so:system/lib/libdss.so \
+    vendor/huawei/u8120/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \
     vendor/huawei/u8120/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \
     vendor/huawei/u8120/proprietary/libgstk_exp.so:system/lib/libgstk_exp.so \
-    vendor/huawei/u8120/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \
-    vendor/huawei/u8120/proprietary/libnv.so:system/lib/libnv.so \
-    vendor/huawei/u8120/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
-    vendor/huawei/u8120/proprietary/libpbmlib.so:system/lib/libpbmlib.so \
-    vendor/huawei/u8120/proprietary/libqmi.so:system/lib/libqmi.so \
-    vendor/huawei/u8120/proprietary/libqueue.so:system/lib/libqueue.so \
-    vendor/huawei/u8120/proprietary/libril.so:system/lib/libril.so \
-    vendor/huawei/u8120/proprietary/libril.so:obj/lib/libril.so \
-    vendor/huawei/u8120/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
-    vendor/huawei/u8120/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
     vendor/huawei/u8120/proprietary/libwms.so:system/lib/libwms.so \
+    vendor/huawei/u8120/proprietary/libnv.so:system/lib/libnv.so \
     vendor/huawei/u8120/proprietary/libwmsts.so:system/lib/libwmsts.so \
+    vendor/huawei/u8120/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
+    vendor/huawei/u8120/proprietary/libdss.so:system/lib/libdss.so \
+    vendor/huawei/u8120/proprietary/libdll.so:system/lib/libdll.so \
+    vendor/huawei/u8120/proprietary/libqmi.so:system/lib/libqmi.so \
+    vendor/huawei/u8120/proprietary/libpbmlib.so:system/lib/libpbmlib.so \
+    vendor/huawei/u8120/proprietary/qmuxd:system/bin/qmuxd \
     vendor/huawei/u8120/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init \
     vendor/huawei/u8120/proprietary/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
 
@@ -188,17 +186,6 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8120/prebuilt/etc/init.d/12cm:system/etc/init.d/12cm
 
 PRODUCT_COPY_FILES += device/huawei/u8120/prebuilt/kernel:kernel
-
-# Additions to build.prop
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.android.dataroaming=false \
-    dalvik.vm.execution-mode=int:jit \
-    dalvik.vm.heapsize=24m \
-    persist.sys.use_dithering=0 \
-    persist.sys.purgeable_assets=1 \
-    ring.delay=0 \
-    ro.telephony.call_ring.delay=0 \
-    ro.telephony.call_ring.multiple=false
 
 
 ## (2) Also get non-open-source aspects if available
