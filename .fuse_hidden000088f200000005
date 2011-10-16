@@ -65,9 +65,7 @@ PRODUCT_COPY_FILES += \
 # Sound and OMX
 PRODUCT_COPY_FILES += \
     device/huawei/u8120/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/huawei/u8120/prebuilt/etc/AudioFilterU8120.csv:system/etc/AudioFilterU8120.csv \
-    device/huawei/u8120/prebuilt/etc/AudioFilterU8110.csv:system/etc/AudioFilterU8110.csv \
-    device/huawei/u8120/prebuilt/etc/AudioFilterU8100.csv:system/etc/AudioFilterU8100.csv \
+    device/huawei/u8120/prebuilt/etc/AudioFilterU8120.csv:system/etc/AudioFilterU8100.csv \
     device/huawei/u8120/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     device/huawei/u8120/prebuilt/etc/01_qc.cfg:system/etc/01_qc.cfg \
     vendor/huawei/u8120/proprietary/libaudioeq.so:system/lib/libaudioeq.so \
@@ -163,9 +161,7 @@ PRODUCT_COPY_FILES += \
 
 #Kernel Modules
 PRODUCT_COPY_FILES += \
-    device/huawei/u8120/prebuilt/modules/ar6000.ko:system/wifi/ar6000.ko \
-    device/huawei/u8120/prebuilt/modules/ramzswap.ko:system/lib/modules/2.6.32.9-perf/ramzswap.ko \
-    device/huawei/u8120/prebuilt/modules/tun.ko:system/lib/modules/2.6.32.9-perf/tun.ko
+    device/huawei/u8120/prebuilt/modules/ar6000.ko:system/wifi/ar6000.ko
 
 # Media configuration xml file
 PRODUCT_COPY_FILES += \

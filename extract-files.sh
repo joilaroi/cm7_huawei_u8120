@@ -30,6 +30,7 @@ lib/libmm-omxcore.so
 lib/libsnd.so
 lib/libauth.so
 lib/libril-qc-1.so
+lib/libril.so
 lib/liboncrpc.so
 lib/libdsm.so
 lib/libqueue.so
@@ -48,6 +49,15 @@ lib/libqmi.so
 lib/libpbmlib.so
 lib/libhwrpc.so
 lib/liboem_rapi.so
+
+lib/libomx_aacdec_sharedlibrary.so
+lib/libomx_amrdec_sharedlibrary.so
+lib/libomx_amrenc_sharedlibrary.so
+lib/libomx_avcdec_sharedlibrary.so
+lib/libomx_m4vdec_sharedlibrary.so
+lib/libomx_mp3dec_sharedlibrary.so
+lib/libomx_sharedlibrary.so
+lib/libomx_sharedlibrary_qc.so
 
 etc/init.qcom.bt.sh
 "
