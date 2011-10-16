@@ -14,10 +14,11 @@ on post-fs
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
     chmod 0770 /data/misc/dhcp
     
-    #calibration filesystem structure
-    mkdir /data/misc/idc 0770 system system
-    chown system system /data/misc/idc
-    chmod 0770 /data/misc/idc
+    # Setup touchscreen calibration
+    chown system system /sys/module/msm_touch/parameters/tscal_xoffset
+    chown system system /sys/module/msm_touch/parameters/tscal_yoffset
+    chown system system /sys/module/msm_touch/parameters/tscal_xscale
+    chown system system /sys/module/msm_touch/parameters/tscal_yscale
 
     mkdir /data/local 0777 radio shell
     mkdir /data/local/tmp 0777 radio shell
