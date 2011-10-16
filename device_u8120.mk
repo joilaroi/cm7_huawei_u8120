@@ -23,7 +23,7 @@ DEVICE_PACKAGE_OVERLAYS += device/huawei/u8120/overlay
 
 PRODUCT_PACKAGES += \
     libRS \
-    hwprops \
+    rzscontrol \
     Gallery \
     lights.msm7k \
     copybit.u8120 \
@@ -41,11 +41,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 
-# vold
-PRODUCT_COPY_FILES += \
-    device/huawei/u8120/prebuilt/etc/vold.fstab:system/etc/vold.fstab
-
-# Board-specific init
+# Init logo
 PRODUCT_COPY_FILES += \
     device/huawei/u8120/prebuilt/initlogo.rle:root/initlogo.rle
 
@@ -53,37 +49,22 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8120/prebuilt/ueventd.u8120.rc:root/ueventd.u8120.rc \
     device/huawei/u8120/prebuilt/init.u8120.rc:root/init.u8120.rc
 
-# Media configuration xml file
-PRODUCT_COPY_FILES += \
-    device/huawei/u8120/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
-
-# Keychars & Keylayouts
-PRODUCT_COPY_FILES += \
-    device/huawei/u8120/prebuilt/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
-    device/huawei/u8120/prebuilt/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
-    device/huawei/u8120/prebuilt/keychars/surf_keypad.kcm.bin:system/usr/keychars/surf_keypad.kcm.bin \
-    device/huawei/u8120/prebuilt/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/huawei/u8120/prebuilt/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    device/huawei/u8120/prebuilt/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl
-
 # Hardware permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml
 
 
 # Sound and OMX
 PRODUCT_COPY_FILES += \
     device/huawei/u8120/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/huawei/u8120/prebuilt/etc/AudioFilterU8120.csv:system/etc/AudioFilterU8120.csv \
+    device/huawei/u8120/prebuilt/etc/AudioFilterU8120.csv:system/etc/AudioFilterU8100.csv \
     device/huawei/u8120/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     device/huawei/u8120/prebuilt/etc/01_qc.cfg:system/etc/01_qc.cfg \
     vendor/huawei/u8120/proprietary/libaudioeq.so:system/lib/libaudioeq.so \
@@ -94,6 +75,14 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/u8120/proprietary/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
     vendor/huawei/u8120/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
     vendor/huawei/u8120/proprietary/libmm-omxcore.so:system/lib/libmm-omxcore.so \
+    vendor/huawei/u8120/proprietary/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \
+    vendor/huawei/u8120/proprietary/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \
+    vendor/huawei/u8120/proprietary/libomx_amrenc_sharedlibrary.so:system/lib/libomx_amrenc_sharedlibrary.so \
+    vendor/huawei/u8120/proprietary/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so \
+    vendor/huawei/u8120/proprietary/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \
+    vendor/huawei/u8120/proprietary/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \
+    vendor/huawei/u8120/proprietary/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so \
+    vendor/huawei/u8120/proprietary/libomx_sharedlibrary_qc.so:system/lib/libomx_sharedlibrary_qc.so \
     vendor/huawei/u8120/proprietary/libsnd.so:system/lib/libsnd.so
 
 
@@ -151,7 +140,6 @@ PRODUCT_COPY_FILES += \
 
 ## Wifi related
 PRODUCT_COPY_FILES += \
-    device/huawei/u8120/firmware/ar6000.ko:system/wifi/ar6000.ko \
     device/huawei/u8120/firmware/athtcmd_ram.bin:system/wifi/athtcmd_ram.bin \
     device/huawei/u8120/firmware/athwlan.bin.z77:system/wifi/athwlan.bin.z77 \
     device/huawei/u8120/firmware/caldata.bin.ar6002:system/wifi/caldata.bin.ar6002 \
@@ -160,43 +148,53 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8120/firmware/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \
     device/huawei/u8120/firmware/device.bin:system/wifi/device.bin
 
-# DHCP config for wifi
+# Wi-Fi related conf
 PRODUCT_COPY_FILES += \
-    device/huawei/u8120/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
-
-# wpa_supplicant configuration file
-PRODUCT_COPY_FILES += \
+    device/huawei/u8120/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     device/huawei/u8120/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 
 #add autorun.iso to stop kernel complain about it..
 PRODUCT_COPY_FILES += \
-    device/huawei/u8120/prebuilt/autorun.iso:system/cdrom/autorun.iso \
+    device/huawei/u8120/prebuilt/autorun.iso:system/cdrom/autorun.iso
+
+#Kernel Modules
+PRODUCT_COPY_FILES += \
+    device/huawei/u8120/prebuilt/modules/ar6000.ko:system/wifi/ar6000.ko
+
+# Media configuration xml file
+PRODUCT_COPY_FILES += \
+    device/huawei/u8120/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
+
+# Keychars & Keylayouts
+PRODUCT_COPY_FILES += \
+    device/huawei/u8120/prebuilt/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
+    device/huawei/u8120/prebuilt/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+    device/huawei/u8120/prebuilt/keychars/surf_keypad.kcm.bin:system/usr/keychars/surf_keypad.kcm.bin \
+    device/huawei/u8120/prebuilt/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    device/huawei/u8120/prebuilt/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/huawei/u8120/prebuilt/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl
 
 # Other
 PRODUCT_COPY_FILES += \
     device/huawei/u8120/prebuilt/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
-    device/huawei/u8120/prebuilt/etc/sysctl.conf:system/etc/sysctl.conf
+    device/huawei/u8120/prebuilt/etc/vold.fstab:system/etc/vold.fstab
 
 PRODUCT_COPY_FILES += device/huawei/u8120/prebuilt/kernel:kernel
-
-# Additions to build.prop
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.android.dataroaming=false \
-    dalvik.vm.execution-mode=int:jit \
-    dalvik.vm.heapsize=24m \
-    persist.sys.use_dithering=0 \
-    persist.sys.purgeable_assets=1 \
-    ring.delay=0 \
-    ro.telephony.call_ring.delay=0 \
-    ro.telephony.call_ring.multiple=false
-
 
 ## (2) Also get non-open-source aspects if available
 $(call inherit-product-if-exists, vendor/huawei/u8120/u8120-vendor.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
-PRODUCT_NAME := cyanogen_u8120
+# LDPI assets
+PRODUCT_LOCALES += ldpi mdpi
+PRODUCT_PACKAGE_OVERLAYS += vendor/cyanogen/overlay/ldpi
+PRODUCT_COPY_FILES += \
+    vendor/cyanogen/prebuilt/ldpi/media/bootanimation.zip:system/media/bootanimation.zip
+
+PRODUCT_NAME := huawei_u8120
 PRODUCT_DEVICE := u8120
-PRODUCT_MODEL := Huawei U8120
+PRODUCT_MODEL := U8120
+PRODUCT_BRAND := huawei
+PRODUCT_MANUFACTURER := huawei

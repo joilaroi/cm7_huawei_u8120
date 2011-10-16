@@ -14,11 +14,6 @@
 # limitations under the License.
 #
 
-# WARNING: This line must come *before* including the proprietary
-# variant, so that it gets overwritten by the parent (which goes
-# against the traditional rules of inheritance).
-USE_CAMERA_STUB := false
-
 # inherit from the proprietary version
 -include vendor/huawei/u8120/BoardConfigVendor.mk
 
@@ -90,8 +85,6 @@ TARGET_SF_NEEDS_REAL_DIMENSIONS := true
 BOARD_NO_RGBX_8888 := true
 BOARD_EGL_CFG := device/huawei/u8120/prebuilt/lib/egl/egl.cfg
 TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
-TARGET_ELECTRONBEAM_FRAMES := 10
-
 BOARD_HAS_LIMITED_EGL := true
 
 # Wifi related defines
@@ -99,9 +92,6 @@ BOARD_WPA_SUPPLICANT_DRIVER := AWEXT
 WIFI_DRIVER_MODULE_PATH     := "/system/wifi/ar6000.ko"
 WIFI_DRIVER_MODULE_NAME     := "ar6000"
 
-# MISC
-WITH_JIT := true
-ENABLE_JSC_JIT := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00200000

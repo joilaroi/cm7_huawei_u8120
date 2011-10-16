@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cyanogen_u8120.mk
+    $(LOCAL_DIR)/device_u8120.mk
