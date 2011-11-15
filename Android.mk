@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-include $(call all-named-subdir-makefiles, recovery libaudio libcopybit U8120Parts)
+include $(call all-named-subdir-makefiles, recovery libaudio libcopybit libril U8120Parts)
