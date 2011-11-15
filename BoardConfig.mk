@@ -18,6 +18,7 @@
 -include vendor/huawei/u8120/BoardConfigVendor.mk
 
 # Camera
+USE_CAMERA_STUB := false
 BOARD_USE_FROYO_LIBCAMERA := true
 
 # ARMv6-compatible processor rev 2 (v6l)
@@ -54,6 +55,10 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 # Browser
 JS_ENGINE := v8
 
+# MISC
+WITH_JIT := true
+ENABLE_JSC_JIT := true
+
 # USB mass storage
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/huawei/u8120/UsbController.cpp
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
@@ -76,6 +81,9 @@ TARGET_PROVIDES_LIBAUDIO := true
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_LIBRPC := true
+
+# RIL
+TARGET_PROVIDES_LIBRIL := true
 
 # Graphics
 TARGET_HARDWARE_3D := false
