@@ -47,7 +47,7 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8120/prebuilt/initlogo.rle:root/initlogo.rle
 
 PRODUCT_COPY_FILES += \
-    device/huawei/u8120/prebuilt/ueventd.u8120.rc:root/ueventd.u8120.rc \
+    device/huawei/u8120/prebuilt/ueventd.huawei.rc:root/ueventd.huawei.rc \
     device/huawei/u8120/prebuilt/init.u8120.rc:root/init.u8120.rc
 
 # Hardware permissions
@@ -65,9 +65,6 @@ PRODUCT_COPY_FILES += \
 # Sound and OMX
 PRODUCT_COPY_FILES += \
     device/huawei/u8120/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/huawei/u8120/prebuilt/etc/AudioFilterU8120.csv:system/etc/AudioFilterU8120.csv \
-    device/huawei/u8120/prebuilt/etc/AudioFilterU8110.csv:system/etc/AudioFilterU8110.csv \
-    device/huawei/u8120/prebuilt/etc/AudioFilterU8100.csv:system/etc/AudioFilterU8100.csv \
     device/huawei/u8120/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     device/huawei/u8120/prebuilt/etc/01_qc.cfg:system/etc/01_qc.cfg \
     vendor/huawei/u8120/proprietary/libaudioeq.so:system/lib/libaudioeq.so \
@@ -98,6 +95,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/huawei/u8120/proprietary/akmd2:system/bin/akmd2
 
+# Camera
+PRODUCT_COPY_FILES += \
+    device/huawei/u8120/prebuilt/lib/libcamera.so:obj/lib/libcamera.so \
+    device/huawei/u8120/prebuilt/lib/libcamera.so:system/lib/libcamera.so \
+    device/huawei/u8120/prebuilt/lib/libqcamera.so:system/lib/libqcamera.so \
+    device/huawei/u8120/prebuilt/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
+    device/huawei/u8120/prebuilt/lib/libmmipl.so:system/lib/libmmipl.so \
+    device/huawei/u8120/prebuilt/lib/libmmprocess.so:system/lib/libmmprocess.so
 
 # Proprietary RIL related and Bluetooth
 PRODUCT_COPY_FILES += \
@@ -116,30 +121,12 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/u8120/proprietary/libpbmlib.so:system/lib/libpbmlib.so \
     vendor/huawei/u8120/proprietary/libqmi.so:system/lib/libqmi.so \
     vendor/huawei/u8120/proprietary/libqueue.so:system/lib/libqueue.so \
-    vendor/huawei/u8120/proprietary/libril.so:system/lib/libril.so \
-    vendor/huawei/u8120/proprietary/libril.so:obj/lib/libril.so \
     vendor/huawei/u8120/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
     vendor/huawei/u8120/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
     vendor/huawei/u8120/proprietary/libwms.so:system/lib/libwms.so \
     vendor/huawei/u8120/proprietary/libwmsts.so:system/lib/libwmsts.so \
     vendor/huawei/u8120/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init \
     vendor/huawei/u8120/proprietary/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
-
-# OEM RPC
-PRODUCT_COPY_FILES += \
-    vendor/huawei/u8120/proprietary/modempre:system/bin/modempre \
-    vendor/huawei/u8120/proprietary/oem_rpc_svc:system/bin/oem_rpc_svc \
-    vendor/huawei/u8120/proprietary/libhwrpc.so:system/lib/libhwrpc.so \
-    vendor/huawei/u8120/proprietary/liboem_rapi.so:system/lib/liboem_rapi.so
-
-# Camera
-PRODUCT_COPY_FILES += \
-    device/huawei/u8120/prebuilt/lib/libcamera.so:obj/lib/libcamera.so \
-    device/huawei/u8120/prebuilt/lib/libcamera.so:system/lib/libcamera.so \
-    device/huawei/u8120/prebuilt/lib/libqcamera.so:system/lib/libqcamera.so \
-    device/huawei/u8120/prebuilt/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
-    device/huawei/u8120/prebuilt/lib/libmmipl.so:system/lib/libmmipl.so \
-    device/huawei/u8120/prebuilt/lib/libmmprocess.so:system/lib/libmmprocess.so
 
 ## Wifi related
 PRODUCT_COPY_FILES += \
