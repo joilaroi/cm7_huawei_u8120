@@ -19,11 +19,6 @@ on post-fs
     chown system system /sys/module/msm_touch/parameters/tscal_yoffset
     chown system system /sys/module/msm_touch/parameters/tscal_xscale
     chown system system /sys/module/msm_touch/parameters/tscal_yscale
-    
-    mkdir /data/local 0777 radio shell
-    mkdir /data/local/tmp 0777 radio shell
-    chown radio shell /data/local
-    chown radio shell /data/local/tmp
 
 
 on boot
@@ -51,13 +46,6 @@ on boot
     chmod 0666 /dev/input/event2
     chmod 0666 /dev/input/event3
     
-    # SDIO polling
-    chown system system /sys/bus/platform/devices/msm_sdcc.1/polling
-    chown system system /sys/bus/platform/devices/msm_sdcc.2/polling
-    
-    # Increase read throughput from sd card
-    write /sys/block/mmcblk0/bdi/read_ahead_kb 2048
-
     # logs
     chmod 0777 /sys/kernel/logger/log_main/enable
     chmod 0777 /sys/kernel/logger/log_events/enable
@@ -66,12 +54,27 @@ on boot
     chmod 0777 /sys/kernel/logger/log_events/priority
     chmod 0777 /sys/kernel/logger/log_radio/priority
     
-    write /sys/module/lowmemorykiller/parameters/minfree 2560,4096,6144,12288,14336,18432
-    write /sys/module/lowmemorykiller/parameters/adj 0,1,2
-    write /sys/module/lowmemorykiller/parameters/check_filepages 1
+    # Setup android gadget
+   write /sys/module/g_android/parameters/serial_number CM7-U8120
+   write /sys/module/g_android/parameters/product_id 0x1038
+   
+   # SD card polling
+    chown system system /sys/module/g_android/parameters/product_id
+    chown system system /sys/devices/platform/msm_sdcc.1/polling
+    chown system system /sys/devices/platform/msm_sdcc.2/polling
+    chown system system /sys/devices/platform/msm_sdcc.3/polling
+    chown system system /sys/devices/platform/msm_sdcc.4/polling
+    chown system system /sys/devices/platform/android_usb/composition
+    chown system system /sys/devices/platform/android_usb/remote_wakeup
 
-    # fb0 should not be world writable
-    chmod 0667 /dev/graphics/fb0
+
+# Enable MASS storage on SDCARD
+    write /sys/devices/platform/mass_storage/lun0/file /dev/block/mmcblk0p1
+    write /sys/bus/platform/drivers/msm_sdcc/msm_sdcc.1/polling 1
+    
+    
+    # Increase read throughput from sd card
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 2048
 
 
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
@@ -114,7 +117,7 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dawext -ieth0 -W -c/data/misc
     disabled
     oneshot
 
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKL eth0
+service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
     disabled
     oneshot
     
