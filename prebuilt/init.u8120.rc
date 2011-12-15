@@ -132,3 +132,9 @@ service iprenew_eth0 /system/bin/dhcpcd -n
 service akmd /system/bin/akmd2
     user compass
     group compass misc input
+
+service hostapd /system/bin/hostapd /data/misc/wifi/hostapd.conf
+    socket hostapd_athap0 dgram 660 wifi wifi
+    group wifi inet
+    oneshot
+    disabled
